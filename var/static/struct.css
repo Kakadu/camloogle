@@ -1,0 +1,1409 @@
+/* Wikibox 65 : shared by all wiki */
+
+/* 'struct.css' */
+
+
+/*
+
+ This CSS keeps the positioning informations for:
+
+ - the page structure: #header, #content(two columns) and #footer
+
+ - the content of #header and #footer: #logo, #nav-projects, #user, ...
+
+ - the #content-banner and it's content (#nav-project, ...)
+
+*/
+
+/* @ mport url('http://fonts.googleapis.com/css?family=Lato'); */
+
+/* Centering the document */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#header,
+#content,
+#footer {
+  position: relative;
+  width: 980px;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Keep floating box inside their container ! */
+
+#header:after,
+#content:after,
+#footer:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+
+
+
+/**********/
+/* Header */
+/**********/
+
+#header {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+#logo {
+  float: left;
+  margin: 0 0 0 23px;
+  height: 104px;
+}
+
+#logo img {
+  /* All logos does not have the same size. Add padding to 101px high. */
+  padding: 21px 0; /* Ocsigen logo */
+}
+
+#nav-projects {
+  float: right;
+  margin: 28px 0 0 0;
+}
+
+#nav-projects ul {
+  padding-left: 0;
+  font-size: 0; /* In order to ignore white space between li... */
+}
+
+#nav-projects ul li {
+  display: inline-block;
+  padding: 8px 0; /* Could be removed when content is "display:block" */
+  font-size: 13px;
+}
+
+#nav-projects ul li a {
+  display: inline; /* Must be inline when adding the "little white house"
+		            in the Ocsigen home button. */
+  padding: 11px 18px;
+}
+
+/* Hide outline header */
+#nav-projects header,
+#header h1 {
+  display: none;
+}
+
+
+
+/***********/
+/* Content */
+/***********/
+
+#content {
+  position:relative;
+  min-height: 800px;
+}
+
+#content > section,
+#content > article,
+#content > div.logbox,
+#content > div.wikibox > div.boxcontent > article,
+#content > div.wikibox > div.boxcontent > section,
+#content > div.wikibox > div.boxcontent > div.logbox {
+  float: right;
+  width: 625px;
+  padding: 20px;
+  margin-left: 40px;
+}
+
+#content > aside,
+#content > div.wikibox > div.boxcontent  > aside,
+#content > nav,
+#content > div.wikibox > div.boxcontent  > nav {
+  float: left;
+  width: 233px;
+  padding: 20px;
+}
+
+/* Move some wikimenu around to ease lisibilty */
+
+#content > div.wikibox > div.wikiboxlinearmenu {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: -11px;
+  z-index: 2;
+}
+
+#content div.wikiboxcontent372 > div.wikiboxlinearmenu {
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: -11px;
+}
+
+/*************/
+/* Banner    */
+/*************/
+
+#content-banner {
+  float: right;
+  margin: 0 0 20px 105px;
+  height: 90px;
+  width: 600px;
+}
+
+#content-banner:before {
+  /* Left logo position */
+  position: relative;
+  left: -90px;
+  top: -30px;
+}
+
+#content-banner.right-logo:after {
+  /* Project name (white opaque) position */
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+
+#content-banner.left-logo:after {
+  /* Project name (white opaque) position */
+  position: absolute;
+  left: 450px;
+  top: 30px;
+}
+
+
+
+/*****************************/
+/* Project's navigation menu */
+/*****************************/
+
+#nav-project {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 4px 10px 0 0;
+  text-align: right;
+}
+
+#nav-project ul {
+  margin: 3px 0;
+  font-size: 0; /* In order to ignore white space between li... */
+}
+
+#nav-project ul a {
+  font-size: 13px; /* ... restore previous font-size. */
+  padding: 0 5px;
+}
+
+#nav-project ul li {
+  display: inline-block;
+}
+
+/* Hide outline header */
+#nav-project > header {
+  display: none;
+}
+
+
+
+/**********/
+/* Footer */
+/**********/
+
+#footer {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#legal {
+  float: left;
+  text-align: left;
+  padding: 0;
+  margin: 0 25px;
+}
+
+#ocsimore-advertisement {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+#user {
+  float: right;
+  text-align: right;
+  margin-right: 20px;
+  padding: 0;
+  margin: 0 25px;
+}
+
+
+
+
+/***************/
+/* Small fixes */
+/***************/
+
+a img {
+  border-style: none; /* For IE and old gecko. */
+}
+
+header, nav, section, article, aside, hgroup {
+  display: block; /* For old webkit and gecko */
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+/* 'struct-style.css' */
+
+
+/*
+
+ This CSS keeps the decoration informations (fonts, colors, borders,
+   ...) for:
+
+ - the #header and #footer and their contents: #logo, #nav-projects, #user, ...
+
+ - the #content's border and background
+
+ - the #content-banner and it's content (#nav-project, ...)
+
+
+*/
+
+@font-face {
+    font-family: 'boldtitlefont';
+    src: url('/resources/fonts/comfortaa_bold-webfont.eot');
+    src: url('/resources/fonts/comfortaa_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/fonts/comfortaa_bold-webfont.woff') format('woff'),
+         url('/resources/fonts/comfortaa_bold-webfont.ttf') format('truetype'),
+         url('/resources/fonts/comfortaa_bold-webfont.svg#ComfortaaBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'titlefont';
+    src: url('/resources/fonts/comfortaa_regular-webfont.eot');
+    src: url('/resources/fonts/comfortaa_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/fonts/comfortaa_regular-webfont.woff') format('woff'),
+         url('/resources/fonts/comfortaa_regular-webfont.ttf') format('truetype'),
+         url('/resources/fonts/comfortaa_regular-webfont.svg#ComfortaaRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #343434;
+  background-repeat: no-repeat;
+  background-position: top center;
+
+  background-image: url('/resources/backgrounds/ocsigen.jpg');
+  background-attachment:fixed;
+  background-color: #f1f1f1;
+}
+
+
+
+
+/**********/
+/* Header */
+/**********/
+
+a#logo {
+  border-style: none;
+}
+
+/* Navigation bar: between projects (linear menu) */
+
+#nav-projects ul {
+  border-radius: 8px;
+}
+
+#nav-projects ul li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  line-height: 24px;
+
+  border-left: 1px solid #999;
+  border-right: 1px solid #bbb;
+  border-bottom-style: none;
+
+  background-color: #aaa; /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, #bbb, #999);
+  background-image:    -moz-linear-gradient(top, #bbb, #999);
+  background-image:     -ms-linear-gradient(top, #bbb, #999);
+  background-image:      -o-linear-gradient(top, #bbb, #999);
+  background-image:         linear-gradient(top, #bbb, #999);
+}
+
+#nav-projects ul li a:hover,
+#nav-projects ul li:first-child a,
+#nav-projects ul li.eliomtools_current:first-child a:hover {
+  background-color: #bbb; /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, #999, #bbb);
+  background-image:    -moz-linear-gradient(top, #999, #bbb);
+  background-image:     -ms-linear-gradient(top, #999, #bbb);
+  background-image:      -o-linear-gradient(top, #999, #bbb);
+  background-image:         linear-gradient(top, #999, #bbb);
+}
+
+#nav-projects li.eliomtools_current a,
+#nav-projects li.eliomtools_current a:hover {
+  background-color: #07ace2; /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, #017cc2, #07ace2);
+  background-image:    -moz-linear-gradient(top, #017cc2, #07ace2);
+  background-image:     -ms-linear-gradient(top, #017cc2, #07ace2);
+  background-image:      -o-linear-gradient(top, #017cc2, #07ace2);
+  background-image:         linear-gradient(top, #017cc2, #07ace2);
+}
+
+#nav-projects ul li:first-child a {
+  border-left-style: none;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+#nav-projects ul li:last-child a {
+  border-right-style: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+#nav-projects li.eliomtools_current a {
+  text-shadow: 1px 1px 1px #448;
+}
+
+#nav-projects ul li:first-child a:hover {
+  background-color: #aaa; /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, #bbb, #999);
+  background-image:    -moz-linear-gradient(top, #bbb, #999);
+  background-image:     -ms-linear-gradient(top, #bbb, #999);
+  background-image:      -o-linear-gradient(top, #bbb, #999);
+  background-image:         linear-gradient(top, #bbb, #999);
+}
+
+/* Little home picture. */
+
+#nav-projects ul li:first-child a:before {
+  content: url('/resources/logos/text_ocsigen-white-small.png');
+  padding: 0 1em 0 0;
+  width:21px; height:17px;
+  display:inline-block;
+  vertical-align:-15%;
+}
+
+
+
+
+/***********/
+/* Content */
+/***********/
+
+/* Content box */
+
+#content {
+
+  box-shadow: -1px -1px 1px 1px #aaa inset, 0 0 4px 1px #acbccb;
+
+  border-radius: 12px;
+
+/*  background-color: #fbfbfb; */
+  background-color: white;
+  background-image:
+    -webkit-linear-gradient(left, #fff 200px, #eaedf4 273px,
+			    rgba(255, 255, 255, 0) 274px);
+  background-image:
+    -moz-linear-gradient(left, #fff 200px, #eaedf4 273px,
+			 rgba(255, 255, 255, 0) 274px);
+  background-image:
+    -ms-linear-gradient(left, #fff 200px, #eaedf4 273px,
+			rgba(255, 255, 255, 0) 274px);
+  background-image:
+    -o-linear-gradient(left, #fff 200px, #eaedf4 273px,
+		       rgba(255, 255, 255, 0) 274px);
+  background-image:
+    linear-gradient(left, #fff 200px, #eaedf4 273px,
+		    rgba(255, 255, 255, 0) 274px);
+
+}
+
+#content a.ocsimore_phrasing_link {
+  color: #0CA9DC;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+
+#content a.ocsimore_flow_link {
+  color: black;
+  text-decoration: none;
+}
+
+/* Title */
+
+/* Use the :any selector when commonly available:
+   see https://developer.mozilla.org/en/CSS/%3A-moz-any:
+#content > :any(section, article) :any(h1, h2, h3, h4),
+#content > div.wikibox > div.boxcontent > :any(section, article) :any(h1, h2, h3, h4),
+
+ */
+#content > section h1,
+#content > article h1,
+#content > section h2,
+#content > article h2,
+#content > section h3,
+#content > article h3,
+#content > section h4,
+#content > article h4,
+#content > div.wikibox > div.boxcontent > section h1,
+#content > div.wikibox > div.boxcontent > article h1,
+#content > div.wikibox > div.boxcontent > section h2,
+#content > div.wikibox > div.boxcontent > article h2,
+#content > div.wikibox > div.boxcontent > section h3,
+#content > div.wikibox > div.boxcontent > article h3,
+#content > div.wikibox > div.boxcontent > section h4,
+#content > div.wikibox > div.boxcontent > article h4 {
+  font-family: boldtitlefont;
+  font-weight: normal;
+}
+
+#content > section h1,
+#content > article h1,
+#content > div.wikibox > div.boxcontent > section h1,
+#content > div.wikibox > div.boxcontent > article h1 {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  width: 635px;
+  background-color: #05a8e6;
+  color: white;
+  padding: 5px 0 5px 10px;
+  margin: 1em 0 2em 0;
+  font-size: 26px;
+  line-height: 31px;
+}
+
+#content > section h2,
+#content > article h2,
+#content > div.wikibox > div.boxcontent > section h2,
+#content > div.wikibox > div.boxcontent > article h2 {
+  font-size: 23px;
+  line-height: 27px;
+  color: #007bc2;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#content > section h2 + nav.ocsimore_outline,
+#content > article h2 + nav.ocsimore_outline,
+#content > div.wikibox > div.boxcontent > section h2 + nav.ocsimore_outline,
+#content > div.wikibox > div.boxcontent > article h2 + nav.ocsimore_outline {
+  margin-top: -10px;
+}
+
+#content > section h2::before,
+#content > article h2::before,
+#content > div.wikibox > div.boxcontent > section h2::before,
+#content > div.wikibox > div.boxcontent > article h2::before {
+  position: relative;
+  display: block;
+  bottom: 10px;
+  height: 28px;
+  left:0px;
+  width: 643px;
+
+  background-image:
+    -webkit-linear-gradient(91deg, rgba(234, 237, 244, 1),
+			    rgba(234, 237, 244, 0) 10px);
+  background-image:
+    -moz-linear-gradient(91deg, rgba(234, 237, 244, 1),
+			 rgba(234, 237, 244, 0) 10px);
+  background-image:
+    -ms-linear-gradient(91deg, rgba(234, 237, 244, 1),
+			rgba(234, 237, 244, 0) 10px);
+  background-image:
+    -o-linear-gradient(91deg, rgba(234, 237, 244, 1),
+		       rgba(234, 237, 244, 0) 10px);
+  background-image:
+    linear-gradient(91deg, rgba(234, 237, 244, 1),
+		    rgba(234, 237, 244, 0) 10px);
+
+  border-bottom: 1px solid #eaedf4;
+  content: "";
+}
+
+#content > section h3,
+#content > article h3,
+#content > div.wikibox > div.boxcontent > section h3,
+#content > div.wikibox > div.boxcontent > article h3 {
+  color: #007bc2;
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+#content > section h3::before,
+#content > article h3::before,
+#content > div.wikibox > div.boxcontent > section h3::before,
+#content > div.wikibox > div.boxcontent > article h3::before {
+  position: relative;
+  display: block;
+
+  bottom: 10px;
+  height: 28px;
+  left:0px;
+  width: 643px;
+
+  background-image:
+    -webkit-linear-gradient(94deg, rgba(234, 237, 244, 1),
+			    rgba(234, 237, 244, 0) 10px);
+  background-image:
+    -moz-linear-gradient(94deg, rgba(234, 237, 244, 1),
+			 rgba(234, 237, 244, 0) 10px);
+  background-image:
+    -ms-linear-gradient(94deg, rgba(234, 237, 244, 1),
+			rgba(234, 237, 244, 0) 10px);
+  background-image:
+    -o-linear-gradient(94deg, rgba(234, 237, 244, 1),
+		       rgba(234, 237, 244, 0) 10px);
+  background-image:
+    linear-gradient(94deg, rgba(234, 237, 244, 1),
+		    rgba(234, 237, 244, 0) 10px);
+
+  border-bottom: 1px solid #eaedf4;
+  content: "";
+}
+
+#content > section h4,
+#content > article h4,
+#content > div.wikibox > div.boxcontent > section h4,
+#content > div.wikibox > div.boxcontent > article h4 {
+  font-size: 17px;
+  color: #868787;
+  border-left: 3px solid #868787;
+  padding: 0 0 0 5px;
+}
+
+
+/* Link */
+
+#content > section a[href^=http\:\/\/]::after,
+#content > section a[href^=https\:\/\/]::after,
+#content > article a[href^=http\:\/\/]::after,
+#content > article a[href^=https\:\/\/]::after,
+#content > div.wikibox > div.boxcontent > section a[href^=http\:\/\/]::after,
+#content > div.wikibox > div.boxcontent > section a[href^=https\:\/\/]::after,
+#content > div.wikibox > div.boxcontent > article a[href^=http\:\/\/]::after,
+#content > div.wikibox > div.boxcontent > article a[href^=https\:\/\/]::after {
+  padding-left: 2px;
+  position: relative;
+  top: .2em;
+  content: url('/resources/icons/external_link-ocsigen.png');
+}
+
+#content > section a[class^=ocsforge_doclink],
+#content > article a[class^=ocsforge_doclink],
+#content > div.wikibox > div.boxcontent > section a[class^=ocsforge_doclink],
+#content > div.wikibox > div.boxcontent > article a[class^=ocsforge_doclink] {
+  background-color: #e5f7fd;
+  color: #08ade5;
+  padding-left: 1px;
+  padding-right: 1px;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+
+#content > section a[class^=ocsforge_doclink_eliom],
+#content > article a[class^=ocsforge_doclink_eliom],
+#content > div.wikibox > div.boxcontent > section a[class^=ocsforge_doclink_eliom],
+#content > div.wikibox > div.boxcontent > article a[class^=ocsforge_doclink_eliom] {
+  background-color: #eaf3d7;
+  color: #8dbf24;
+}
+
+#content > section a[class^=ocsforge_doclink_ocsigenserver],
+#content > article a[class^=ocsforge_doclink_ocsigenserver],
+#content > div.wikibox > div.boxcontent > section a[class^=ocsforge_doclink_ocsigenserver],
+#content > div.wikibox > div.boxcontent > article a[class^=ocsforge_doclink_ocsigenserver] {
+  background-color: #f3c4c4;
+  color: #d02526;
+}
+
+#content > section a[class^=ocsforge_doclink_lwt],
+#content > article a[class^=ocsforge_doclink_lwt],
+#content > div.wikibox > div.boxcontent > section a[class^=ocsforge_doclink_lwt],
+#content > div.wikibox > div.boxcontent > article a[class^=ocsforge_doclink_lwt] {
+  background-color: #fbe3cf;
+  color: #e06a0b;
+}
+
+#content > section a[class^=ocsforge_doclink_js_of_ocaml],
+#content > article a[class^=ocsforge_doclink_js_of_ocaml],
+#content > div.wikibox > div.boxcontent > section a[class^=ocsforge_doclink_js_of_ocaml],
+#content > div.wikibox > div.boxcontent > article a[class^=ocsforge_doclink_js_of_ocaml] {
+  background-color: #edd7f9;
+  color: #8c38bd;
+}
+
+/* List */
+
+#content > section li,
+#content > article li,
+#content > div.wikibox > div.boxcontent > section li,
+#content > div.wikibox > div.boxcontent > article li {
+  padding: 3px 0;
+  list-style-image: url('/resources/icons/right_triangle-ocsigen.png');
+}
+
+
+
+/*************/
+/* Banner    */
+/*************/
+
+#content-banner {
+  text-shadow: 1px 1px 1px #558;
+  border-radius: 12px 12px 0 0;
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  background-image: url('/resources/backgrounds/banner-ocsigen.png');
+  background-color: #049ee0;
+  box-shadow: -1px -1px 1px 1px #0580a9 inset;
+  color: white;
+}
+
+#content-banner:after {
+  /* Project name (white opaque) position */
+  opacity: 0.8;
+}
+
+#content-banner p {
+  /* Slogan ! */
+  font-family: titlefont;
+  font-weight: normal;
+  font-size: 28px;
+  text-shadow: 1px 1px 1px #555;
+  position: absolute;
+  margin: 0;
+  right: 165px;
+  top: 10px;
+  width: 340px;
+}
+
+#content-banner a.ocsimore_phrasing_link {
+  border-style: none;
+  color: white;
+}
+
+#content-banner:before {
+  content: url('/resources/logos/ocsigen_with_shadow.png');
+}
+
+#content-banner:after {
+  content: url('/resources/logos/text_ocsigen-white-medium.png');
+}
+
+
+
+
+/*****************************/
+/* Project's navigation menu */
+/*****************************/
+
+#nav-project ul a {
+  text-decoration: none;
+  font-weight: normal;
+  color: white;
+  margin: 0 4px;
+}
+
+#nav-project ul a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#nav-project ul li.eliomtools_current a,
+#nav-project ul li.eliomtools_current_path a {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+#nav-project ul.eliomtools_level0 li a { font-size: 16px; }
+#nav-project ul.eliomtools_level1 li a { font-size: 14px; }
+#nav-project ul.eliomtools_level2 li a { font-size: 12px; }
+
+#nav-project ul li:not(:last-child) { /* Item separator */
+  border-right: 1px solid white;
+}
+
+
+/**********/
+/* Footer */
+/**********/
+
+#footer {
+  color: #888;
+}
+
+#footer a.ocsimore_phrasing_link {
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+  color: #888;
+}
+
+#footer #user a.connection:before {
+  content: url('/resources/icons/lock.png');
+  padding: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+
+/* 'documentation.css' */
+
+
+/*
+
+ This CSS affect the documentation.
+
+ */
+
+/**************************************/
+/* Documentation's menu (left column) */
+/**************************************/
+
+nav#doctree > header {
+  display: none;
+}
+
+nav#doctree ul {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+/* Border */
+
+nav#doctree ul {
+  list-style-type: none;
+}
+
+nav#doctree > ul ul {
+  border-left-width: 1px;
+  border-left-style: dotted;
+}
+
+nav#doctree > ul ul li {
+  padding-top: .2em;
+  padding-left: 1em;
+}
+
+/* Link */
+
+article#documentation span.odocwiki_inlinecode,
+nav#doctree li {
+  color: #0CA9DC;
+}
+
+nav#doctree li {
+  position:relative;
+  font-weight: bold;
+}
+
+nav#doctree a {
+  display: block;
+  position:relative;
+  font-weight: normal;
+  color: black;
+  text-decoration: none;
+  border-bottom-style: none;
+  right: 0;
+}
+
+article#documentation > section > h1 a[class^=ocsforge_doclink],
+nav#doctree ul li a:hover {
+  background-color: rgba(12, 169, 220, 0.2);
+  left: -1em;
+}
+
+nav#doctree ul li a:hover::before {
+  content: url('/resources/icons/right_triangle-ocsigen.png');
+  left: -1em;
+  width: 1em;
+  display: inline-block;
+}
+
+/* Current page */
+
+nav#doctree ul li.eliomtools_current a:before {
+  content: url('/resources/icons/right_triangle-black.png');
+  left: -1em;
+  width: 1em;
+  display: inline-block;
+}
+
+nav#doctree ul li.eliomtools_current a:hover {
+  background-color: transparent;
+  left: 0;
+}
+
+nav#doctree ul li.eliomtools_current a:before {
+}
+
+nav#doctree ul li.eliomtools_current {
+  padding-left: 0;
+}
+
+nav#doctree li.eliomtools_current a {
+  font-weight: bold;
+}
+
+
+
+
+
+/****************************/
+/* Documentation's contents */
+/****************************/
+
+div.paragraph {
+ font-weight: bold;
+ margin-top: 2em;
+}
+
+/* WIP box */
+
+article#documentation span.wip  {
+  position: relative;
+  border: 2px dotted #ce6d0c;
+  border-radius: 12px;
+  padding: 0 10px;
+  background-color: white;
+
+  color: grey;
+  font-style: italic;
+}
+
+article#documentation aside.wip {
+  position: relative;
+  border: 2px dashed #ce6d0c;
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin: 30px 0;
+  background-color: white;
+
+  color: grey;
+  font-style: italic;
+}
+
+article#documentation aside.wip > header > h5 {
+
+  width: auto;
+  font-size: 13px;
+
+  float: right;
+  margin-top: -7px;
+  margin-right: -12px;
+  margin-bottom: 7px;
+
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+
+  padding: 5px;
+  font-weight: bold;
+  font-style: italic;
+
+  color: white;
+  background-color: #ce6d0c;
+  content: "Work in progress";
+
+}
+
+article#documentation aside.wip > p:nth-child(2) {
+  margin-top: 0;
+}
+
+article#documentation aside.wip > p:last-child {
+  margin-bottom: 0;
+}
+
+article#documentation aside.wip::after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+/* Concepts box */
+
+article#documentation aside.concepts {
+  float: right;
+  color: white;
+  background-color: #05a8e6;
+  padding: 8px 12px;
+  margin: 0px 0 15px 15px;
+  border-radius: 12px;
+}
+
+article#documentation aside.concepts > header > h5 {
+  font-weight:bold;
+  font-size: 15px;
+  padding-bottom: 3px;
+  margin: 0;
+}
+
+article#documentation aside.concepts > p:nth-child(2) {
+  margin-top: 0;
+}
+
+article#documentation aside.concepts > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Encadré */
+
+article#documentation aside.concept {
+  border: 1px solid #08ade5;
+  margin: 25px 0 15px;
+  border-radius: 12px;
+  padding: 0 10px;
+}
+
+article#documentation aside.concept header {
+  background-color: #08ade5;
+  color: white;
+  border-style: none;
+  margin: 0 -10px 0 -10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+article#documentation aside.concept header h5 {
+  font-family: boldtitlefont;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 0;
+  padding: 5px 10px;
+}
+
+article#documentation aside.concept header h5 span.concept_prefix {
+  display: none;
+}
+
+nav.ocsimore_outline span.concept_prefix,
+div.ocsimore_outline span.concept_prefix {
+  font-style: italic;
+}
+
+nav.ocsimore_outline span.concept_prefix,
+div.ocsimore_outline span.concept_prefix {
+  font-style: italic;
+}
+
+/* Code */
+
+article#documentation span.teletype {
+  color: #0CA9DC;
+  font-family: monospace;
+}
+
+article#documentation span.ocsforge_color {
+  font-family: monospace;
+}
+
+article#documentation span.ocsforge_color_delimiter,
+article#documentation span.ocsforge_color_keyword   { color : #990099; }
+article#documentation span.ocsforge_color_comment   { color : #ff6600; }
+article#documentation span.ocsforge_color_operator  { color: black; }
+article#documentation span.ocsforge_color_lid       { color: black; }
+article#documentation span.ocsforge_color_uid       { color : #339900; }
+article#documentation span.ocsforge_color_label     { color: #878700; }
+
+article#documentation span.ocsforge_color_int,
+article#documentation span.ocsforge_color_float,
+article#documentation span.ocsforge_color_bin,
+article#documentation span.ocsforge_color_oct,
+article#documentation span.ocsforge_color_hex,
+article#documentation span.ocsforge_color_char,
+article#documentation span.ocsforge_color_string { color : #07ACE5; }
+
+article#documentation span.odocwiki_name { color: #0033ff; }
+article#documentation span.odocwiki_inlinecode { color: #08ade5; }
+
+#content > article#documentation > section > h1 a[class^=ocsforge_doclink],
+#content > div.wikibox > div.boxcontent > article#documentation > section > h1 a[class^=ocsforge_doclink] {
+  color: white;
+}
+
+#content > article#documentation pre.odocwiki_code a[class^=ocsforge_doclink],
+#content > div.wikibox > div.boxcontent > article#documentation pre.odocwiki_code a[class^=ocsforge_doclink],
+#content > article#documentation tr.odocwiki_index a[class^=ocsforge_doclink],
+#content > div.wikibox > div.boxcontent > article#documentation tr.odocwiki_index a[class^=ocsforge_doclink] {
+  background-color: inherit;
+}
+
+article#documentation hr + pre.odocwiki_code { margin-top: 1em; }
+
+article#documentation pre,
+article#documentation pre.odocwiki_code {
+  clear: both;
+  background-color: #f1f1f1;
+  border-left: 6px solid #dedede;
+  padding: 8px;
+  margin: 1em 0 1.5em 0;
+}
+
+article#documentation pre.odocwiki_code {
+  margin: 2.5em 0 1em 0;
+}
+
+article#documentation span.odocwiki_code {
+  display: block;
+  margin: 0;
+}
+
+article#documentation span.odocwiki_inlinecode {
+  font-family: monospace;
+}
+
+
+article#documentation span.odocwiki_variant,
+article#documentation span.odocwiki_field {
+    display: block;
+    width: 600px; }
+
+article#documentation span.odocwiki_variant_constr,
+article#documentation span.odocwiki_field_descr {
+    margin-top: 0.5em;
+    display:block;
+    float: left;
+    margin-top: 0.3em;
+}
+
+article#documentation span.odocwiki_comments { 
+    display: table; 
+    float: right;
+    margin-top: 0.3em;
+    color: #ff6600;
+    white-space: normal;
+}
+article#documentation span.odocwiki_comments > span { display: table-cell; }
+article#documentation span.odocwiki_comments > span:nth-child(2) { max-width: 500px; }
+article#documentation span.odocwiki_comments_close { vertical-align: bottom; }
+
+article#documentation span.odocwiki_variant::after,
+article#documentation span.odocwiki_field::after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+/*
+
+article#documentation span.odocwiki_variant > span { display: table-cell; }
+*/
+
+
+/* 'menu.css' */
+
+/*
+
+ This CSS affect the documentation left menum and the outline extension.
+
+ */
+
+
+nav#page-outline > header h1 {
+  color: #666;
+  font-family: boldtitlefont;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 25px;
+  margin: 10px 0 30px 0;;
+}
+
+/*
+nav#page-outline ol {
+  margin: 0;
+  padding: 0 0 0 1em;
+}
+
+nav#page-outline li {
+  padding: 3px 0;
+  list-style-image: url('/resources/icons/right_triangle-ocsigen.png');
+}
+
+nav#page-outline li a {
+  color: #0CA9DC;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: dotted;
+}
+*/
+
+nav#page-outline ol {
+  margin: 0;
+  padding: 0;;
+}
+
+nav#page-outline ol {
+  list-style-type: none;
+  border-left-width: 1px;
+  border-left-style: dotted;
+  border-color: #0CA9DC;
+}
+
+nav#page-outline li {
+  list-style-image: none;
+  padding: .2em 0 0 1em;
+  margin: 0.3em 0;
+}
+
+nav#page-outline a {
+  display: block;
+  position:relative;
+  font-weight: normal;
+  color: black;
+  text-decoration: none;
+  border-bottom-style: none;
+  right: 0;
+}
+
+nav#page-outline li a:hover {
+  background-color: rgba(12, 169, 220, 0.2);
+  left: -1em;
+}
+
+nav#page-outline ol li a:hover::before {
+  content: url('/resources/icons/right_triangle-ocsigen.png');
+  left: -1em;
+  width: 0.7em;
+  display: inline-block;
+}
+
+
+article#documentation nav.ocsimore_outline,
+article#documentation div.ocsimore_outline {
+   margin: 0em 0 0 2em;
+}
+
+#content > article#documentation nav.ocsimore_outline > header h1,
+#content > article#documentation div.ocsimore_outline > header h1,
+#content > div.wikibox > div.boxcontent > article#documentation nav.ocsimore_outline > header h1,
+#content > div.wikibox > div.boxcontent > article#documentation div.ocsimore_outline > header h1 {
+  color: #666;
+  padding: 0;
+  margin: 2em 0 .5em 0;
+  background: none;
+  font-size: 17px;
+}
+
+#content > article#documentation nav.ocsimore_outline > ol,
+#content > article#documentation div.ocsimore_outline > ol,
+#content > div.wikibox > div.boxcontent > article#documentation nav.ocsimore_outline > ol,
+#content > div.wikibox > div.boxcontent > article#documentation div.ocsimore_outline > ol {
+  padding: 0 0 1em 1em;
+  margin: 0;
+}
+
+#content > article#documentation nav.ocsimore_outline ol ol,
+#content > article#documentation div.ocsimore_outline ol ol,
+#content > div.wikibox > div.boxcontent > article#documentation nav.ocsimore_outline ol ol,
+#content > div.wikibox > div.boxcontent > article#documentation div.ocsimore_outline ol ol {
+  padding-left: 1.5em;
+}
+
+#content > article#documentation nav.ocsimore_outline ol ol li,
+#content > article#documentation div.ocsimore_outline ol ol li,
+#content > div.wikibox > div.boxcontent > article#documentation nav.ocsimore_outline ol ol li,
+#content > div.wikibox > div.boxcontent > article#documentation div.ocsimore_outline ol ol li {
+  list-style-type: none;
+  list-style-image: none;
+  padding: 0;
+}
+
+#content > article#documentation nav.ocsimore_outline li a,
+#content > article#documentation div.ocsimore_outline li a,
+#content > div.wikibox > div.boxcontent > article#documentation nav.ocsimore_outline li a,
+#content > div.wikibox > div.boxcontent > article#documentation div.ocsimore_outline li a {
+  color: #0CA9DC;
+}
+
+
+#content > article#documentation nav.ocsimore_outline li a:hover::before,
+#content > article#documentation div.ocsimore_outline li a:hover::before,
+#content > div.wikibox > div.boxcontent > article#documentation nav.ocsimore_outline li a:hover::before,
+#content > div.wikibox > div.boxcontent > article#documentation div.ocsimore_outline li a:hover::before {
+  content: none;
+}
+
+/* Wikibox 438: specific to the eliom wiki */
+
+/* 'struct-style-eliom.css' */
+
+/* This stylesheet defines the colors and images for Ocsigen server. */
+
+body {
+  background-image: url('/resources/backgrounds/eliom.jpg');
+}
+
+#logo img {
+  /* All logos does not have the same size. Add padding to 101px high. */
+  padding: 9px 0;
+}
+
+#nav-projects li.eliomtools_current a,
+#nav-projects li.eliomtools_current a:hover {
+  background-color: #6eb630; /* fallback color if gradients are not supported */
+  background-image: -webkit-linear-gradient(top, #6eb630, #c1d118);
+  background-image:    -moz-linear-gradient(top, #6eb630, #c1d118);
+  background-image:     -ms-linear-gradient(top, #6eb630, #c1d118);
+  background-image:      -o-linear-gradient(top, #6eb630, #c1d118);
+  background-image:         linear-gradient(top, #6eb630, #c1d118);
+}
+
+#content a.ocsimore_phrasing_link {
+  color: #6eb630;
+}
+
+#content > section a[href^=http\:\/\/]::after,
+#content > section a[href^=https\:\/\/]::after,
+#content > article a[href^=http\:\/\/]::after,
+#content > article a[href^=https\:\/\/]::after,
+#content > div.wikibox > div.boxcontent > section a[href^=http\:\/\/]::after,
+#content > div.wikibox > div.boxcontent > section a[href^=https\:\/\/]::after,
+#content > div.wikibox > div.boxcontent > article a[href^=http\:\/\/]::after,
+#content > div.wikibox > div.boxcontent > article a[href^=https\:\/\/]::after {
+  content: url('/resources/icons/external_link-eliom.png');
+}
+
+#content-banner {
+  background-image: url('/resources/backgrounds/banner-eliom.png');
+  background-color: #8fc124;
+  box-shadow: -1px -1px 1px 1px #64a62c inset;
+  color: white;
+}
+
+#content-banner a {
+  color: white;
+}
+
+#content-banner:before {
+  content: url('/resources/logos/eliom_with_shadow.png');
+}
+
+#content-banner:after {
+  content: url('/resources/logos/text_eliom-white-small.png');
+}
+
+#content-banner.left-logo:after {
+  left: 470px;
+  top: 22px;
+}
+
+#content > section li,
+#content > article li,
+#content > div.wikibox > div.boxcontent > section li,
+#content > div.wikibox > div.boxcontent > article li {
+  padding: 3px 0;
+  list-style-image: url('/resources/icons/right_triangle-eliom.png');
+}
+
+#content > section h1,
+#content > article h1,
+#content > div.wikibox > div.boxcontent > section h1,
+#content > div.wikibox > div.boxcontent > article h1 {
+  background-color: #6eb630;
+}
+
+#content > section h2,
+#content > article h2,
+#content > section h3,
+#content > article h3,
+#content > div.wikibox > div.boxcontent > section h2,
+#content > div.wikibox > div.boxcontent > article h2,
+#content > div.wikibox > div.boxcontent > section h3,
+#content > div.wikibox > div.boxcontent > article h3 {
+  color: #6eb630;
+}
+
+
+
+/*'documentation-eliom.css' */
+
+/*
+
+ This CSS describes the Eliom's specific colors for the documentation.
+
+*/
+
+article#documentation span.teletype,
+article#documentation span.odocwiki_inlinecode,
+nav#doctree li {
+  color: #6EB630;
+}
+
+#content > article#documentation > section > h1 a[class^=ocsforge_doclink],
+#content > div.wikibox > div.boxcontent > article#documentation > section > h1 a[class^=ocsforge_doclink],
+nav#doctree ul li a:hover {
+  background-color: rgba(110, 182, 48, 0.2);
+}
+
+nav#doctree ul li a:hover::before {
+  content: url('/resources/icons/right_triangle-eliom.png');
+}
+
+article#documentation a[href^=http\:\/\/]:after,
+article#documentation a[href^=https\:\/\/]:after {
+  content: url('/resources/icons/external_link-eliom.png');
+}
+
+/* 'menu-eliom.css' */
+
+/*
+
+  This CSS specilaize for the ocsigenserver the colors of the
+  documentation left menu and the outline extension.
+
+*/
+
+nav#page-outline ol {
+  border-color: #6eb630;
+}
+
+
+#content > article#documentation nav.ocsimore_outline ol li a:hover,
+#content > article#documentation div.ocsimore_outline ol li a:hover,
+#content > div.wikibox > div.boxcontent > article#documentation nav.ocsimore_outline ol li a:hover,
+#content > div.wikibox > div.boxcontent > article#documentation div.ocsimore_outline ol li a:hover,
+nav#page-outline li a:hover {
+  background-color: rgba(110, 182, 48, 0.2);
+}
+
+nav#page-outline ol li a:hover::before {
+  content: url('/resources/icons/right_triangle-eliom.png');
+}
+
+#content > article#documentation nav.ocsimore_outline li a,
+#content > article#documentation div.ocsimore_outline li a,
+#content > div.wikibox > div.boxcontent > article#documentation nav.ocsimore_outline li a,
+#content > div.wikibox > div.boxcontent > article#documentation div.ocsimore_outline li a {
+  color: #6eb630;
+}
