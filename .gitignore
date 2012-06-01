@@ -2,4 +2,7 @@ _client
 _server
 *~
 *.cm[oixa]
+var/*.log
+
+
 

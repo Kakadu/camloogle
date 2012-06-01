@@ -1,0 +1,223 @@
+html {
+    background: none repeat scroll 0 0 #E8E8E8;
+    overflow: hidden;
+}
+body {
+    background-color: #FEFEFE;
+    color: #222222;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.noscript {
+    display: none;
+}
+.strong {
+    font-weight: bold;
+}
+.cut {
+    opacity: 0.5;
+}
+#logo {
+    background: url("images/logo.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 26px;
+    position: absolute;
+    right: 0;
+    text-indent: -800em;
+    top: 0;
+    width: 186px;
+}
+.headerMenuBar {
+    padding-right: 190px;
+}
+.alertMsg {
+    color: #333333;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+}
+#loadscreen {
+    background: none repeat scroll 0 0 white;
+    bottom: 0;
+    color: #666666;
+    left: 0;
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+.bk-window-cover.loader {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9999999;
+}
+.loaderContent {
+    margin: 10% auto 0;
+    width: 350px;
+}
+.loaderContent .loaderTitle {
+    color: #CED4D6;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 2px 2px #000000;
+}
+.loaderContent .loaderBg {
+    background: url("images/loader-bg.png") no-repeat scroll 0 0 transparent;
+    height: 27px;
+    margin-top: 15px;
+    padding: 14px 18px 0;
+    width: 314px;
+}
+.loaderContent .loaderIndicator {
+    background-image: -moz-linear-gradient(center bottom , #F38406 0%, #FFA536 100%);
+    border-radius: 10px 10px 10px 10px;
+    border-top: 1px solid #FFBC6D;
+    box-shadow: 0 3px 5px 0 #000000;
+    height: 11px;
+    margin: 0 auto;
+    min-width: 4%;
+    width: 4%;
+}
+.draganddrop {
+    -moz-transition: background-color 0.25s ease-out 0s;
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 99999;
+}
+.draganddrop.over {
+    background-color: rgba(255, 255, 255, 0.5);
+    visibility: visible;
+}
+.draganddrop > span {
+    -moz-transition: background-color 0.25s ease-out 0s;
+    background-color: transparent;
+    border-radius: 8px 8px 8px 8px;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 16px 8px;
+    position: relative;
+    top: 150px;
+}
+.draganddrop.over > span {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.relative {
+    position: relative;
+}
+.consoleInputBox {
+    background: -moz-linear-gradient(center bottom , #1D1D1D 0%, #292929 100%) repeat scroll 0 0 transparent;
+    border-top: 1px solid #1F1F1F;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+    margin: 0;
+    overflow: hidden;
+    padding: 1px;
+    position: relative;
+    z-index: 999;
+}
+.dockcol {
+    background: -moz-linear-gradient(center bottom , #202020 0%, #2F2F2F 100%) repeat scroll 0 0 transparent;
+}
+.dockcol .expand-panel-bg {
+    background: -moz-linear-gradient(center bottom , #202020 0%, #2F2F2F 100%) repeat scroll 0 0 transparent;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: -3px;
+    top: 0;
+}
+.dockcol .ace_scroller {
+    border-radius: 0 0 0 0;
+}
+.dockcol .basic {
+}
+.dockcol .basic .expand-panel-bg {
+    background-image: -moz-linear-gradient(center bottom , #323336 0%, #444548 100%);
+    right: -3px;
+}
+.dockcol .basic .hbox {
+}
+.unselectable {
+    -moz-user-select: -moz-none;
+}
+.ace_content {
+    z-index: 0;
+}
+.signin_options {
+    margin: 15px 16px 0;
+    text-align: right;
+}
+.github-signin {
+    background: url("images/signin_github.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    float: right;
+    height: 24px;
+    margin-left: 6px;
+    margin-top: -5px;
+    width: 26px;
+}
+.github-signin.btn-over {
+    background-position: 0 -24px;
+}
+.bitbucket-signin {
+    background: url("images/signin_bitbucket.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    float: right;
+    height: 24px;
+    margin-left: 6px;
+    margin-top: -5px;
+    width: 26px;
+}
+.bitbucket-signin.btn-over {
+    background-position: 0 -24px;
+}
+.facebook-signin {
+    background: url("images/signin_facebook.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    float: right;
+    height: 24px;
+    margin-left: 6px;
+    margin-top: -5px;
+    width: 26px;
+}
+.facebook-signin.btn-over {
+    background-position: 0 -24px;
+}
+.google-signin {
+    background: url("images/signin_google.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    float: right;
+    height: 24px;
+    margin-left: 6px;
+    margin-top: -5px;
+    width: 26px;
+}
+.google-signin.btn-over {
+    background-position: 0 -24px;
+}
+.twitter-signin {
+    background: url("images/signin_twitter.png") no-repeat scroll 0 0 transparent;
+    display: inline-block;
+    float: right;
+    height: 24px;
+    margin-left: 6px;
+    margin-top: -5px;
+    width: 26px;
+}
+.twitter-signin.btn-over {
+    background-position: 0 -24px;
+}

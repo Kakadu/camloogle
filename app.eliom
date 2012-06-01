@@ -3,6 +3,7 @@ module App = Eliom_output.Eliom_appl (struct
   (* must be the name of the .js file *)
   let application_name = "app"
 end)
+
 let default_head = 
   let open HTML5.M in
   let open Eliom_output in
@@ -44,5 +45,10 @@ let search_servive =
            ])
         )
     )
+
+let ide_servive = 
+  let module EP = Eliom_parameters in
+  App.register_service ~path:["ide"] ~get_params:(EP.string "project")
+    Ide.ide_content
     
     
