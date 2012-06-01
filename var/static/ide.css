@@ -5094,7 +5094,7 @@ body .whitebg .content {
 .mnubtn .pointer {
     display: none;
 }
-.mnubtn SPAN {
+.mnubtn span {
     color: #AAAAAA;
     display: block;
     font-family: Tahoma,Arial;
